@@ -100,7 +100,7 @@ i18n.setLocale = (request, targetLocale)->
 	else
 		defaultLocale = targetLocale
 
-	i18n.getLocale(request)
+	return i18n.getLocale(request)
 
 i18n.getLocale = (request)->
 	return if request? then request.locale else defaultLocale

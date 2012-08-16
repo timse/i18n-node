@@ -93,6 +93,8 @@ i18n.setLocale = (request, targetLocale)->
 	unless targetLocale? and locales[targetLocale] or locales[request]
 		[targetLocale, request] = [request,undefined]
 
+	return unless locales[targetLocale]
+
 	if request?
 		request.locale = targetLocale
 	else

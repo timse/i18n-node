@@ -82,7 +82,8 @@ i18n.__ = ()->
 			when 0 then msg = vsprintf(msg.none or msg.other, [count])
 			else msg = vsprintf(msg.other, [count])
 
-	msg = vsprintf(msg, Array.prototype.slice.call(arguments, 1)) if arguments.length > 1
+	msg = vsprintf(msg, Array.prototype.slice.call(arguments, slice))
+
 
 #either gets called like
 #setLocale('en') or like

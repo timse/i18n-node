@@ -164,15 +164,14 @@ translate = (locale,  singular, none, plural)->
 
 	read(locale) if locales[locale]?
 
-	if plural?
-		unless locales[locale][singular]?
+	if plural? and not locales[locale][singular]?
 			locales[locale][singular] =
 				'none': none
 				'one': singular,
 				'other': plural
 			write(locale)
 
-	unless !locales[locale][singular]
+	unless locales[locale][singular]?
 		locales[locale][singular] = singular
 		write(locale)
 
